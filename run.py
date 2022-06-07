@@ -1,4 +1,5 @@
 """Import modules"""
+import random
 
 
 class GameBoard:
@@ -27,8 +28,21 @@ class GameBoard:
 class Battleship:
     """Class that builds and randomizes the battleships on the board"""
 
+    def __init__(self, board):
+        self.board = board
+        self.x_row = 0
+        self.y_column = 0
+
     def create_ships(self):
         """Ramdomizes the ships on the board"""
+        for _ in range(20):
+            self.x_row, self.y_column = random.randint(
+                0, 7), random.randint(0, 7)
+            while self.board[self.x_row][self.y_column] == "X":
+                self.x_row, self.y_column = random.randint(
+                    0, 7), random.randint(0, 7)
+            self.board[self.x_row][self.y_column] = "X"
+        return self.board
 
     def get_user_input(self):
         """Gets the user input and prints the result"""
