@@ -1,4 +1,4 @@
-"""Import modules"""
+"""Importing random module"""
 import random
 
 
@@ -47,18 +47,18 @@ class Battleship:
     def get_user_input(self):
         """Gets the user input and prints the result"""
 
-        x_row = input("Enter the row of the ship: ")
+        x_row = input("Enter the row of the ship: \n")
         while x_row not in '12345678':
             print('Not an appropriate choice, please select a valid row')
-            x_row = input("Enter the row of the ship: ")
+            x_row = input("Enter the row of the ship: \n")
 
-        y_column = input("Enter the column letter of the ship: ").upper()
+        y_column = input("Enter the column letter of the ship: \n").upper()
         while y_column not in "ABCDEFGH":
             print(
-                'Not an appropriate choice, please select a valid column'
+                "Not an appropriate choice, please select a valid column"
             )
             y_column = input(
-                "Enter the column letter of the ship: ").upper()
+                "Enter the column letter of the ship: \n").upper()
         return int(x_row) - 1,\
             GameBoard.get_letters_to_numbers(self)[y_column]
 
