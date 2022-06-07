@@ -84,6 +84,12 @@ def run_game():
         GameBoard.print_board(user_guess_board)
         # get user input
         user_x_row, user_y_column = Battleship.get_user_input(object)
+        # check if duplicate guess
+        while user_guess_board.board[user_x_row][user_y_column] == "-" or\
+                user_guess_board.board[user_x_row][user_y_column] == "X":
+            print(" ")
+            print("You guessed that one already.")
+            user_x_row, user_y_column = Battleship.get_user_input(object)
 
 
 run_game()
