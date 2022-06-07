@@ -86,6 +86,7 @@ def run_game():
     # start 20 turns
     bullets = 20
     print(bullets, "bullets.")
+
     while bullets > 0:
         GameBoard.print_board(user_guess_board)
         # get user input
@@ -105,6 +106,19 @@ def run_game():
             print(" ")
             print("You missed!")
             user_guess_board.board[user_x_row][user_y_column] = "-"
+        # check for win or lose
+        if Battleship.count_hit_ships(user_guess_board) == 5:
+            print(" ")
+            print("You sunk all battleships!")
+            break
+        else:
+            bullets -= 1
+            print(f"You have {bullets} bullets remaining.")
+            if bullets == 0:
+                print("Sorry you ran out of bullets.")
+                print("Game over!")
+                Battleship.count_hit_ships(user_guess_board)
+                break
 
 
 run_game()
