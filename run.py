@@ -63,7 +63,13 @@ class Battleship:
             GameBoard.get_letters_to_numbers(self)[y_column]
 
     def count_hit_ships(self):
-        """Counts the number of ships and marks it on the board"""
+        """Counts the number of hit ships and marks it on the board"""
+        hit_ships = 0
+        for row in self.board:
+            for column in row:
+                if column == "X":
+                    hit_ships += 1
+        return hit_ships
 
 
 def run_game():
