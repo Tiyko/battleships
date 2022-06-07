@@ -47,6 +47,21 @@ class Battleship:
     def get_user_input(self):
         """Gets the user input and prints the result"""
 
+        x_row = input("Enter the row of the ship: ")
+        while x_row not in '12345678':
+            print('Not an appropriate choice, please select a valid row')
+            x_row = input("Enter the row of the ship: ")
+
+        y_column = input("Enter the column letter of the ship: ").upper()
+        while y_column not in "ABCDEFGH":
+            print(
+                'Not an appropriate choice, please select a valid column'
+            )
+            y_column = input(
+                "Enter the column letter of the ship: ").upper()
+        return int(x_row) - 1,\
+            GameBoard.get_letters_to_numbers(self)[y_column]
+
     def count_hit_ships(self):
         """Counts the number of ships and marks it on the board"""
 
@@ -67,6 +82,8 @@ def run_game():
     print(bullets, "bullets.")
     while bullets > 0:
         GameBoard.print_board(user_guess_board)
+        # get user input
+        user_x_row, user_y_column = Battleship.get_user_input(object)
 
 
 run_game()
