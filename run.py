@@ -77,7 +77,8 @@ def run_game():
     print(" ")
     print("This is a battleship game!")
     print("There are 20 ships hidden on a board of 64 slots.")
-    print("To hit a target select the row number (1 to 8) and the column letter (A to H)")
+    print("To hit a target select the row number\
+         (1 to 8) and the column letter (A to H)")
     print("You have 20 bullets. How many ships can you bring down?")
     print(" ")
     computer_board = GameBoard([[" "] * 8 for i in range(8)])
@@ -108,7 +109,7 @@ def run_game():
             print("You missed!")
             user_guess_board.board[user_x_row][user_y_column] = "-"
         # check for win or lose
-        if Battleship.count_hit_ships(user_guess_board) == 5:
+        if Battleship.count_hit_ships(user_guess_board) == 20:
             print(" ")
             print("You sunk all battleships!")
             break
