@@ -11,6 +11,16 @@ A simple battleships terminal game, playable against the computer for people of 
 ## **Index**
 
 1. [**Game Intro**](#game-intro)
+1. [**User Stories**](#user-stories)
+1. [**Features**](#features)
+    * [**Game rules**](#game-rules)
+        * [**The Game board**](#the-game-board)
+        * [**Gameplay**](#gameplay)
+1. [**Testing**](#testing)
+1. [**Technologies**](#technologies)
+1. [**Known Bugs**](#known-bugs)
+1. [**Deployment**](#deployment)
+1. [**Credits**](#credits)
 
 ## **User Stories**
 
